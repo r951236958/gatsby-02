@@ -5,8 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import Prism from "prismjs"
 
 import Header from "./header"
 import "./layout.css"
@@ -21,6 +22,10 @@ const Layout = ({ children }) => {
       }
     }
   `)
+
+  useEffect(() => {
+    Prism.highlightAll()
+  }, [])
 
   return (
     <>
